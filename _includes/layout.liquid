@@ -3,20 +3,33 @@ title: 11ty Boilerplate
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="p-0">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="/styles/screen.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/fetch@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="/" title="Go home">Home</a></li>
-      <li><a href="/about/" title="About the boilerplate">About</a></li>
-    </ul>
-  </nav>
-    {{ content }}
+<body class="m-0 p-0">
+    <header class="bg-green-600 text-white py-6 w-screen">
+        <div class="mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl font-bold">User & Post Data</h1>
+                <p class="text-lg">Fetching Data Dynamically with Alpine.js & Tailwind</p>
+            </div>
+
+            <nav class="mt-4 md:mt-0 flex space-x-4">
+                <a href="/" class="px-4 py-2 bg-white text-green-600 font-semibold rounded-md shadow hover:bg-gray-200 transition">Home</a>
+                <a href="/ai-writeup/" class="px-4 py-2 bg-white text-green-600 font-semibold rounded-md shadow hover:bg-gray-200 transition">AI Write-up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="p-6">
+        {{ content }}
+    </main>
 </body>
 </html>
